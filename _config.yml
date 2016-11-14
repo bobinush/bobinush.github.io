@@ -28,7 +28,7 @@ disqus:
 
 # URL
 #url:                "https://AWEEKJ.github.io" # the base hostname & protocol for your site
-url:                "" # use this url when develop
+url:                "/" # use this url when develop
 baseurl:            "" # the subpath of your site, e.g. /blog
 
 
@@ -38,7 +38,7 @@ permalink:          /:year-:month-:day/:title/
 
 # Pagination
 paginate:           5
-paginate_path:      /page:num/
+paginate_path:      /blog/page:num/
 
 # Markdown
 markdown:           kramdown
@@ -46,15 +46,15 @@ kramdown:
   imput:            GFM
 
 # Navigation
-nav:
-  - name:           "About"
-    url:            "/about"
-  - name:           "Archive"
-    url:            "/archive"
-  - name:           "Tags"
-    url:            "/tags"
-  - name:           "Github"
-    url:            "https://github.com/AWEEKJ/Kiko-plus"
+#nav:
+#  - name:           "About"
+#    url:            "/about"
+#  - name:           "Archive"
+#    url:            "/archive"
+#  - name:           "Tags"
+#    url:            "/tags"
+#  - name:           "Github"
+#    url:            "https://github.com/AWEEKJ/Kiko-plus"
 
 
 
