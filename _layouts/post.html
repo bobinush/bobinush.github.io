@@ -1,5 +1,6 @@
 ---
 layout: default
+comments: true
 ---
 {% include header.html %}
 <div class="post">
@@ -34,8 +35,7 @@ layout: default
 
   <!-- Disqus -->
   {% if page.comments != false and site.disqus.id %}
-  <section id="disqus_thread"></section>
-  {% include disqus.html %}
+    {% include disqus.html %}
   {% endif %}
 
 </div>

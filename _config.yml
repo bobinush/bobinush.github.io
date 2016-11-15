@@ -24,21 +24,23 @@ google-analytics:
 
 # Disqus
 disqus:
-  id:               "your-id"
+  id:               "nowakowski-1"
 
 # URL
 #url:                "https://AWEEKJ.github.io" # the base hostname & protocol for your site
-url:                "/" # use this url when develop
+url:                "" # use this url when develop
 baseurl:            "" # the subpath of your site, e.g. /blog
+blogurl:            "/blog"
 
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:           Europe/Stockholm
-permalink:          /:year-:month-:day/:title/
+permalink:          pretty #/:year-:month-:day/:title/
+# pretty gör så man tar bort ".html" i url-länkar https://jekyllrb.com/docs/permalinks/
 
 # Pagination
 paginate:           5
-paginate_path:      /blog/page:num/
+paginate_path:      /blog/:num/
 
 # Markdown
 markdown:           kramdown
@@ -46,15 +48,13 @@ kramdown:
   imput:            GFM
 
 # Navigation
-#nav:
-#  - name:           "About"
-#    url:            "/about"
-#  - name:           "Archive"
-#    url:            "/archive"
-#  - name:           "Tags"
-#    url:            "/tags"
-#  - name:           "Github"
-#    url:            "https://github.com/AWEEKJ/Kiko-plus"
+nav:
+  - name:           "About"
+    url:            "/about"
+  - name:           "Blog"
+    url:            "/blog"
+  - name:           "Github"
+    url:            "https://github.com/bobinush"
 
 
 

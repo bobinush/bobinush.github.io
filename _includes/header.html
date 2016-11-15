@@ -1,23 +1,21 @@
 <header class="header">
-	<h1 class="header-title">
-		<a href="{{ site.url }}">{{ site.lastName }}<span>&#39;s blog</span></a>
-	</h1>
-	<nav class="header-nav">
-		<!--{% for nav in site.nav %}
-			{% if nav.url contains 'http://' or nav.url contains 'https://' %}
-				<a href="{{ nav.url }}">{{ nav.name }}</a>
-			{% else %}
-				<a href="{{ nav.url | prepend: site.baseurl }}">{{ nav.name }}</a>
-			{% endif %}
-		{% endfor %}-->
-		{% for page in site.pages %}
-            {% unless page.exclude_from_nav %}
-                {% if nav.url contains 'http://' or nav.url contains 'https://' %}
-                    <a href="{{ page.url }}">{{ page.title }}</a>
-                {% else %}
-                    <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-                {% endif %}
-            {% endunless %}
-		{% endfor %}
-	</nav>
+    <h1 class="header-title">
+        <a href="/">{{ site.lastName }}<span>&#39;s blog</span></a>
+    </h1>
+    <nav class="header-nav">
+        {% for nav in site.nav %}
+            {% assign class = nil %}
+            {% if page.url contains nav.url %}
+                {% comment %}
+                <!-- http://stackoverflow.com/a/28057019/1695663 -->
+                {% endcomment %}
+                {% assign class = 'active' %}
+            {% endif %}
+            {% if nav.url contains 'http://' or nav.url contains 'https://' %}
+                <a href="{{ nav.url }}" class="{{ class }}">{{ nav.name }}</a>
+            {% else %}
+                <a href="{{ nav.url | prepend: site.baseurl }}" class="{{ class }}">{{ nav.name }}</a>
+            {% endif %}
+        {% endfor %}
+    </nav>
 </header>

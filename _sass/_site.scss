@@ -70,7 +70,10 @@ body {
         color: $base-color;
         text-decoration: none;
       }
-
+      &.active {
+          font-weight:700;
+          color: $base-color;
+      }
       + a {
         margin-left: .25rem;
       }
@@ -156,11 +159,11 @@ body {
 .list {
   &-post {
     padding: 4% 2%;
-    &:hover {
-    background-color: $background-over-color;
-    border-color: transparent;
-    border-radius: 10px;
-    }
+    //&:hover {
+    //background-color: $background-over-color;
+    //border-color: transparent;
+    //border-radius: 10px;
+    //}
 
     a {
       color: $base-color;
