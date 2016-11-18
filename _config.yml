@@ -27,8 +27,7 @@ disqus:
   id:               "nowakowski-1"
 
 # URL
-#url:                "https://AWEEKJ.github.io" # the base hostname & protocol for your site
-url:                "" # use this url when develop
+url:                "https://bobinush.github.io/blog/" # use this url when develop
 baseurl:            "" # the subpath of your site, e.g. /blog
 blogurl:            "/blog"
 
