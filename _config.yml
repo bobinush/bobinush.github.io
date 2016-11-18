@@ -9,14 +9,14 @@ lastName:           "Nowakowski"
 
 
 author:
-  name:             your-name
-  facebook:         your-id
-  twitter:          your-id
-  github:           your-id
-  linkedin:         your-id
-  medium:           your-id
-  tumblr:           your-id
-  email:            your-id@your-email.com
+  name:             Robin Nowakowski
+  facebook:         bobinush
+  github:           bobinush
+#  twitter:          your-id
+#  linkedin:         your-id
+#  medium:           your-id
+#  tumblr:           your-id
+#  email:            your-id@your-email.com
 
 # Google-analytics
 google-analytics:

@@ -12,7 +12,7 @@
                 {% assign class = 'active' %}
             {% endif %}
             {% if nav.url contains 'http://' or nav.url contains 'https://' %}
-                <a href="{{ nav.url }}" class="{{ class }}">{{ nav.name }}</a>
+                <a href="{{ nav.url }}" class="{{ class }}" target="_blank">{{ nav.name }}</a>
             {% else %}
                 <a href="{{ nav.url | prepend: site.baseurl }}" class="{{ class }}">{{ nav.name }}</a>
             {% endif %}

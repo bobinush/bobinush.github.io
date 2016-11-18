@@ -322,10 +322,15 @@ body {
 .footer {
   text-align: center;
   font-size: .75rem;
+    //position: absolute;
+    //bottom: 0;
 
   &-link {
     margin: .2rem;
 
+      span{
+        font-size: .5rem;
+    }
     a {
       color: $base-color;
       margin: 4px;

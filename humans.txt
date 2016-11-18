@@ -1,0 +1,6 @@
+﻿/* TEAM */
+Robin Nowakowski Kalmar, Sweden
+
+/* SITE */
+Built using jekyll and github pages.
+Modified version of Kiko-plus theme (https://github.com/AWEEKJ/Kiko-plus)

@@ -2,7 +2,6 @@
 layout: default
 comments: true
 ---
-{% include header.html %}
 <div class="post">
   <h1 class="post-title">{{ page.title }}</h1>
   <span class="post-date">
@@ -16,7 +15,8 @@ comments: true
           <span class="term">{{ tag }}</span>
         </a>
       </li>
-      {% unless forloop.last %}{% endunless %}
+      {% unless forloop.last %}
+      {% endunless %}
       {% endfor %}
     </ul>
   </div>
@@ -28,8 +28,18 @@ comments: true
   {% if page.share != false %}
   <div class="post-share">
     <hr>
-    {% include share.html %}
-    <hr>
+      <span>Share this: <br /></span>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="ssk ssk-icon ssk-facebook"></a>
+      <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="ssk ssk-icon ssk-twitter"></a>
+      <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="ssk ssk-icon ssk-google-plus"></a>
+      <a href="https://www.tumblr.com/share?url={{ site.url }}{{ page.url }}" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="ssk ssk-icon ssk-tumblr"></a>
+      <a href="mailto:?subject={{ page.title }}&amp;body=Check out this site {{ site.url }}{{ page.url }}" class="ssk ssk-icon ssk-email"></a>
+
+      <hr>
   </div>
   {% endif %}
 
