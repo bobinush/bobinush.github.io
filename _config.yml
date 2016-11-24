@@ -6,8 +6,6 @@
 firstName:          "Robin"
 lastName:           "Nowakowski"
 
-
-
 author:
   name:             Robin Nowakowski
   facebook:         bobinush
@@ -55,8 +53,6 @@ nav:
 #  - name:           "Github"
 #    url:            "https://github.com/bobinush"
 
-
-
 # Sass
 sass:
   sass_dir:         _sass
@@ -83,3 +79,15 @@ gems:
   - jekyll-paginate
 
 exclude:            [vendor]
+
+# START SEO
+
+logo:               images/pic.png
+# Social
+social:
+  name: Robin Nowakowski
+  links:
+    - https://www.facebook.com/bobinush
+    - https://github.com/bobinush
+
+# END SEO
