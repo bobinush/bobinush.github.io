@@ -47,6 +47,7 @@ hr {
 
     &-title {
         font-weight: 300;
+        padding-top: 2rem;
         a {
             color: $base-color;
 
@@ -188,7 +189,7 @@ hr {
 
         &-title {
             margin-bottom: .25rem;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 600;
             color: $base-color;
         }
@@ -248,7 +249,7 @@ hr {
         font-size: .75rem;
         display: inline;
         list-style-type: none;
-        text-transform: lowercase;
+        //text-transform: lowercase;
 
         a {
             display: inline-block;

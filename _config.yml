@@ -46,9 +46,9 @@ kramdown:
 
 # Navigation
 nav:
-  - name:           "About"
+  - name:           "Om"
     url:            "/about"
-  - name:           "Blog"
+  - name:           "Blogg"
     url:            "/blog"
 #  - name:           "Github"
 #    url:            "https://github.com/bobinush"
