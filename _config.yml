@@ -82,7 +82,7 @@ exclude:            [vendor]
 
 # START SEO
 
-logo:               images/pic.png
+logo:               assets/images/pic.png
 # Social
 social:
   name: Robin Nowakowski
