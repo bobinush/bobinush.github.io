@@ -27,7 +27,7 @@ disqus:
   id:               "nowakowski-1"
 
 # URL
-url:                "https://bobinush.github.io/blog/" # use this url when develop
+url:                "https://bobinush.github.io" # use this url when develop
 baseurl:            "" # the subpath of your site, e.g. /blog
 blogurl:            "/blog"
 
@@ -52,8 +52,8 @@ nav:
     url:            "/about"
   - name:           "Blog"
     url:            "/blog"
-  - name:           "Github"
-    url:            "https://github.com/bobinush"
+#  - name:           "Github"
+#    url:            "https://github.com/bobinush"
 
 
 

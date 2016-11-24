@@ -8,56 +8,53 @@ layout: page
     {% else %}
     <!-- This loops through the paginated posts -->
     {% for post in paginator.posts %}
-    <div class="list-post">
 
-        {% if post.link %}
-            <a href="{{ post.link }}">
-        {% else %}
-            <a href="{{ post.url | prepend: site.baseurl }}">
+    {% if post.link %}
+    <a href="{{ post.link }}">
+    {% else %}
+    <a href="{{ post.url | prepend: site.baseurl }}">
         {% endif %}
-        <div class="list-post-date">
-            <time>{{ post.date | date_to_string }}</time>
-        </div>
-        <div class="list-post-title">
-            {{ post.title }}
-        </div>
-        </a>
-        {% if post.description %}
-            <div class="list-post-desc">
-                {{ post.content }}
+        <div class="list-post">
+            <div class="list-post-date">
+                <time>{{ post.date | date_to_string }}</time>
             </div>
-        {% endif %}
-    </div>
-    <hr />
+            <div class="list-post-title">
+                {{ post.title }}
+            </div>
+
+            {% if post.description %}
+            <div class="list-post-desc">
+                {{ post.excerpt }}
+            </div>
+            {% endif %}
+        </div>
+    </a>
+    <!--<hr />-->
     <!-- insert post links -->
-    <hr />
     {% endfor %}
     <!-- Pagination links -->
     <div class="list-pagination">
-    <span class="list-pagination-previous">
-      {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}"
-           class="previous">
-          <i class="fa fa-angle-left" aria-hidden="true"></i>
-          Previous
-        </a>
-      {% else %}
-
-      {% endif %}
-    </span>
+        <span class="list-pagination-previous">
+            {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}"
+               class="previous">
+              <i class="fa fa-angle-left" aria-hidden="true"></i>
+              Previous
+            </a>
+            {% else %}
+            {% endif %}
+        </span>
 
         <span class="list-pagination-next">
-      {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl }}"
-           class="next">
-          Next
-          <i class="fa fa-angle-right" aria-hidden="true"></i>
-        </a>
-      {% else %}
-
-      {% endif %}
-    </span>
-
+            {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path | prepend: site.baseurl }}"
+               class="next">
+              Next
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </a>
+            {% else %}
+            {% endif %}
+         </span>
     </div>
     {% endif %}
 </div>

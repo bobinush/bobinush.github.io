@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="{{ page.title }}" />
 	<meta property="og:type" content="website" />
-	{% if post.url %}
-	<meta property="og:url" content="{{ post.url }}" />
-	{% else %}
-	<meta property="og:url" content="{{ site.url }}" />	
-	{% endif %}
+	<meta property="og:url" content="{{ site.url | append: page.url }}" />
 	<meta property="og:image" content="{{ site.url }}/images/pic.png" />
     {% if page.url == "/404" %}
     <meta http-equiv="refresh" content="5; url=/">
@@ -24,7 +20,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <link rel="author" href="humans.txt" />
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed for {{ site.lastName }}" href="{{ site.baseurl }}/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for {{ site.lastName }}" href="{{ site.url }}/feed.xml" />
     {% seo %}
 
     {% comment %}
