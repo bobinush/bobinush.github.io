@@ -17,22 +17,28 @@ html {
 
 html,
 body {
+    height: 100%;
     margin: 0;
     padding: 0;
 }
 
 .content-container {
-    max-width: 38rem;
+    max-width: $site-width;
     padding: 2rem 1.5rem;
     margin-left: auto;
     margin-right: auto;
+    min-height: 100%;
+    margin-bottom: -85px;
 
-    @media (min-width: 38rem) {
-        padding: 5rem 1rem;
+    @media (max-height: 400px) {
+        padding: 0;
     }
 }
 
-hr { margin: .5rem}
+hr {
+    margin: .5rem
+}
+
 /*--------------
   Header
   -------------- */
@@ -325,8 +331,11 @@ hr { margin: .5rem}
 .footer {
     text-align: center;
     font-size: .75rem;
-    //position: absolute;
-    //bottom: 0;
+    height: 75px;
+    bottom: 0;
+    max-width: $site-width;
+    margin-left: auto;
+    margin-right: auto;
 
     &-link {
         margin: .2rem;
