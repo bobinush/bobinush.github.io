@@ -2,6 +2,8 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -9,6 +11,7 @@ html {
     font-size: 18px;
     font-weight: 300;
     line-height: 1.6;
+    margin-left: calc(100vw - 100%);
 
     @media (min-width: 38em) {
         font-size: 20px;
@@ -18,8 +21,12 @@ html {
 html,
 body {
     height: 100%;
-    margin: 0;
-    padding: 0;
+}
+
+body{
+    display: table;
+    width: 100%;
+    height: 100%;
 }
 
 .content-container {
@@ -27,16 +34,24 @@ body {
     padding: 2rem 1.5rem;
     margin-left: auto;
     margin-right: auto;
-    min-height: 100%;
-    margin-bottom: -85px;
+    height: auto;
 
     @media (max-height: 400px) {
         padding: 0;
     }
 }
 
+.about-me {
+    text-align: center;
+    img {
+        width: 200px;
+        margin: 1rem auto;
+        display: block;
+    }
+}
+
 hr {
-    margin: .5rem
+    margin: .5rem;
 }
 
 /*--------------
@@ -332,11 +347,12 @@ hr {
 .footer {
     text-align: center;
     font-size: .75rem;
-    height: 75px;
-    bottom: 0;
+    //bottom: 0;
     max-width: $site-width;
-    margin-left: auto;
-    margin-right: auto;
+    //margin-left: auto;
+    //margin-right: auto;
+    display: table-row;
+    height: 1px;
 
     &-link {
         margin: .2rem;

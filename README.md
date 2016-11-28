@@ -1,103 +1,43 @@
-# Kiko Plus Theme
+# Jekyll Boilerplate
 
-![image](/images/image.png)
+This is a boilerplate to be used for Jekyll-assignments in the course. The virtual machine (hashicorp/precise32) will have the following (relevant) packages installed:
 
-You can see live demo [here](https://aweekj.github.io/Kiko-plus)
+From start:
+* node.js (Latest stable)
+* npm
+* git
+* bundler
 
-This theme is inspired by [Kiko](http://github.com/gfjaru/Kiko) theme, powered by [Jekyll](http://jekyllrb.com), hosted on [Github Pages](https://pages.github.com).
-
-## Features
-
-- Disqus comment system
-- Google analytics
-- Pagination support
-- Custom tags
-- SEO support
+From npm install:
+* jekyll (via bundler)
+* scss (via bundler)
 
 
-## Installation
+## Install
+Make sure you have the following installed on your system:
+* Virtual Box [https://www.virtualbox.org/](https://www.virtualbox.org/)
+* Vagrant [https://www.vagrantup.com/](https://www.vagrantup.com/)
 
-#### Method 1: new master's repository (The Best)
+Now, do:
 
-1. First [fork](https://github.com/AWEEKJ/Kiko-plus/fork) it.
-2. Change your forked repository name _Kiko-plus_ to __USERNAME.github.io__ where
-   __USERNAME__ is your github user name.
-3. Access your new blog via [https://username.github.io](https://username.github.io).
-4. [See configuration](#configuration).
+1. Pull (`git pull https://github.com/1dv022/jekyll-boilerplate.git`) into your existing repo. Make sure you are in the root of your repo.
 
-#### Method 2: gh-pages in existing repository
+2. Start the virtual machine using `vagrant up` (May take 10-30 minutes this first time. Ignore red command line statements and warnings.)
 
-1. Create a new branch called _gh-pages_ in the repository where you want to add a template [managing branches](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/).
-2. From command line run `git clone https://github.com/AWEEKJ/Kiko-plus.git` - this will clone _Kiko-plus_ template to your computer.
-3. Create new branch `git checkout -b gh-pages` where _gh-pages_ will be your branch name.
-4. Add remote, which is your repo from the first step, to your new branch `git remote add gh-pages https://github.com/<yourName>/<yourMaster>/gh-pages`. _yourName_ is your account name and _yourMaster_ is your repository.
-5. Push new branch to remote `git push gh-pages`.
-6. Update `_config.yml` file by changing `baseurl: "<branchName>"` _branchName_ is your branch name where _gh-pages_ resides. See [configuration](#configuration).
+3. SSH into the machine using  `vagrant ssh` (Now you are connected to the virtual machine. Every command is now executed in the virtual mashine. If you do `exit` you leave the virtual machine and are back on your local computer.)
 
-#### Method 3: run it locally
+4. Install bundler with `gem install bundler`. Then install decencies and github-pages `npm install` (if you are on Windows use the command `npm install --no-bin-links`). It will now install some packages and it could take a while.
 
-1. Download [zip](https://github.com/AWEEKJ/Kiko-plus/archive/master.zip) or clone it `git clone https://github.com/AWEEKJ/Kiko-plus`.
-2. Go inside folder and run `jekyll serve` or `bundle exec jekyll s` or `rake preview`. This will build a website which you can access [https://localhost:4000](https://localhost:4000). You need to have [Jekyll](https://jekyllrb.com/docs/installation/) installed to do this.
+5. Create an scaffolded jekyll project using `jekyll new src` (`src` to install in the directory (`/vagrant/src`)
 
+## Daily workflow
+1. Start out by `vagrant up` your machine and ssh into it (`vagrant ssh`)
 
-## Configuration
+2. Start watching for changes in the jekyll files. `npm run watch`
 
-All configuration is done via `_config.yml` file which you will find in your main repo folder. Change this `<something>` to yours.
+3. Open up a browser and visit the url `http://localhost:4000`
+    To get the css working you have to make a change in the `/src/_config.yml`-file - Change `url: "http://example.com"` to `url: ""` to get the correct path.
 
-- Change this to your blog name.
+4. Fire up the IDE of your choise (Webstorm, sublime etc.) and open the files in the `src`-folder and start editing your site. When a file is saved the watch-script will auto generate the site. (including sass-files but not true for _config.yml)
 
-```yml
-name: <blog-name>
-```
-
-- Change this to your domain. **NOTE**- if running locally change this to `url: "https://localhost:4000"`.
-
-```yml
-url: "https://<your-name>.github.io"
-```
-
-- Change this to your branch name where _gh-pages_ resides. !NOTE apply only if you used __Method 2__ for installation.
-
-```yml
-baseurl: "/<branch-name>"
-```
-
-- These configuration in `author:` is for links to icons in footer. Modify `_includes/footer.html` to add more link icons.
-
-```yml
-author:
-  name:             your-name
-  facebook:         your-id
-  twitter:          your-id
-  github:           your-id
-  linkedin:         your-id
-  medium:           your-id
-  tumblr:           your-id
-  email:            your-id@your-email.com
-```
-
-- Change this to your Google Analytic ID.
-
-```yml
-google-analytics:
-  id:               your-id
-```
-
-- Change this to your Disqus ID.
-
-```yml
-disqus:
-  id:               your-id
-```
-
-## Rakefile Usage
-
-```bash
-$ rake post title="A Title" [date="2015-08-16"] [tags=[tag1,tag2]]
-$ rake draft title="A Title" [date="2015-08-16"] [tags=[tag1,tag2]]
-$ rake preview
-```
-
-## License
-
-This theme is released under MIT License.
+5. When you are done simply `ctrl+c` to abort the watch, `exit` to  exit the ssh-session and do a `vagrant halt` to stop the machine or `vagrant suspend` to only suspend it.
